@@ -28,7 +28,7 @@ This project demonstrates several core C programming concepts:
 | `stud_main.c` | Contains `main()` and controls the menu-driven program. |
 | `stud_add.c` | Creates and inserts a student record with an automatically assigned roll number. |
 | `stud_del.c` | Deletes a student record by roll number or name. |
-| `stud_delall.c` | Deletes all records and releases the allocated memory. |
+| `stud_del_all.c` | Deletes all records and releases the allocated memory. |
 | `stud_show.c` | Displays the student records in a readable format. |
 | `stud_mod.c` | Modifies an existing student's details. |
 | `stud_sort.c` | Sorts student records according to the selected option. |
@@ -96,12 +96,11 @@ Each student is stored in a dynamically allocated node. The `next` pointer in ea
 +---------+-------------+------------+------+
 | Roll No | Name        | Percentage | Next |
 +---------+-------------+------------+------+
-|    1    | Chandrakala |    89.0    |  o---|---->
+|    1    | Chandrakala |    89.0    |  -------->
 +---------+-------------+------------+------+    |
-                                                  v
+                                                 v
                                       +-------------------+
-                                      |      Node 2       |
-                                      | Next -> NULL      |
+                                      |      Node 2       |	          
                                       +-------------------+
 ```
 
@@ -147,13 +146,13 @@ The file `student.dat` is used to retain student data between program runs.
                 |
           +-----+-----+
           |           |
-       Continue      Exit
-          |           |
-          |           v
-          |     Release memory
-          |           |
-          +----<      v
-                    END
+         Save       Exit
+                      |
+                      v
+                Release memory
+                      |
+              	      v 
+                     END
 ```
 
 ## ✨ Features
